@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="소스 파일\AI">
+      <UniqueIdentifier>{193efc54-8500-4145-ae58-8f494d66c7bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\AI\AIStatus">
+      <UniqueIdentifier>{2e0b7d3c-0946-4580-af57-a6471e3d3db0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\AI\cComposite">
+      <UniqueIdentifier>{8f50c78d-d656-443c-a5c2-a8ab9df89d8b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\AI\CompSimple">
+      <UniqueIdentifier>{c45e9d90-7b59-4303-bf2a-6f953e837460}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\AI\CompComposit">
+      <UniqueIdentifier>{3f2e3014-bce2-4226-ba19-d23010494fb1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="cWinSocketServer.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="cAI.cpp">
+      <Filter>소스 파일\AI</Filter>
+    </ClCompile>
+    <ClCompile Include="cAIStatus.cpp">
+      <Filter>소스 파일\AI\AIStatus</Filter>
+    </ClCompile>
+    <ClCompile Include="cDragonAI.cpp">
+      <Filter>소스 파일\AI\AIStatus</Filter>
+    </ClCompile>
+    <ClCompile Include="cComposite.cpp">
+      <Filter>소스 파일\AI\cComposite</Filter>
+    </ClCompile>
+    <ClCompile Include="cCompositeComplex.cpp">
+      <Filter>소스 파일\AI\cComposite</Filter>
+    </ClCompile>
+    <ClCompile Include="cCompositeSimple.cpp">
+      <Filter>소스 파일\AI\cComposite</Filter>
+    </ClCompile>
+    <ClCompile Include="cDragonAttack.cpp">
+      <Filter>소스 파일\AI\CompSimple</Filter>
+    </ClCompile>
+    <ClCompile Include="cMove_BackMove.cpp">
+      <Filter>소스 파일\AI\CompSimple</Filter>
+    </ClCompile>
+    <ClCompile Include="cMove_BacktoStart.cpp">
+      <Filter>소스 파일\AI\CompSimple</Filter>
+    </ClCompile>
+    <ClCompile Include="cMove_Chase.cpp">
+      <Filter>소스 파일\AI\CompSimple</Filter>
+    </ClCompile>
+    <ClCompile Include="cPosThink.cpp">
+      <Filter>소스 파일\AI\CompSimple</Filter>
+    </ClCompile>
+    <ClCompile Include="cTargetalive.cpp">
+      <Filter>소스 파일\AI\CompSimple</Filter>
+    </ClCompile>
+    <ClCompile Include="cThisAlive.cpp">
+      <Filter>소스 파일\AI\CompSimple</Filter>
+    </ClCompile>
+    <ClCompile Include="cDragonBattle.cpp">
+      <Filter>소스 파일\AI\CompComposit</Filter>
+    </ClCompile>
+    <ClCompile Include="cDragonReady.cpp">
+      <Filter>소스 파일\AI\CompComposit</Filter>
+    </ClCompile>
+    <ClCompile Include="cDragonThink.cpp">
+      <Filter>소스 파일\AI\CompComposit</Filter>
+    </ClCompile>
+    <ClCompile Include="cMoveSelect.cpp">
+      <Filter>소스 파일\AI\CompComposit</Filter>
+    </ClCompile>
+    <ClCompile Include="cStatusThink.cpp">
+      <Filter>소스 파일\AI\CompComposit</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="cWinSocketServer.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="cAI.h">
+      <Filter>소스 파일\AI</Filter>
+    </ClInclude>
+    <ClInclude Include="cAIStatus.h">
+      <Filter>소스 파일\AI\AIStatus</Filter>
+    </ClInclude>
+    <ClInclude Include="cDragonAI.h">
+      <Filter>소스 파일\AI\AIStatus</Filter>
+    </ClInclude>
+    <ClInclude Include="cComposite.h">
+      <Filter>소스 파일\AI\cComposite</Filter>
+    </ClInclude>
+    <ClInclude Include="cCompositeComplex.h">
+      <Filter>소스 파일\AI\cComposite</Filter>
+    </ClInclude>
+    <ClInclude Include="cCompositeSimple.h">
+      <Filter>소스 파일\AI\cComposite</Filter>
+    </ClInclude>
+    <ClInclude Include="cDragonAttack.h">
+      <Filter>소스 파일\AI\CompSimple</Filter>
+    </ClInclude>
+    <ClInclude Include="cMove_BackMove.h">
+      <Filter>소스 파일\AI\CompSimple</Filter>
+    </ClInclude>
+    <ClInclude Include="cMove_BacktoStart.h">
+      <Filter>소스 파일\AI\CompSimple</Filter>
+    </ClInclude>
+    <ClInclude Include="cMove_Chase.h">
+      <Filter>소스 파일\AI\CompSimple</Filter>
+    </ClInclude>
+    <ClInclude Include="cPosThink.h">
+      <Filter>소스 파일\AI\CompSimple</Filter>
+    </ClInclude>
+    <ClInclude Include="cTargetalive.h">
+      <Filter>소스 파일\AI\CompSimple</Filter>
+    </ClInclude>
+    <ClInclude Include="cThisAlive.h">
+      <Filter>소스 파일\AI\CompSimple</Filter>
+    </ClInclude>
+    <ClInclude Include="cDragonBattle.h">
+      <Filter>소스 파일\AI\CompComposit</Filter>
+    </ClInclude>
+    <ClInclude Include="cDragonReady.h">
+      <Filter>소스 파일\AI\CompComposit</Filter>
+    </ClInclude>
+    <ClInclude Include="cDragonThink.h">
+      <Filter>소스 파일\AI\CompComposit</Filter>
+    </ClInclude>
+    <ClInclude Include="cMoveSelect.h">
+      <Filter>소스 파일\AI\CompComposit</Filter>
+    </ClInclude>
+    <ClInclude Include="cStatusThink.h">
+      <Filter>소스 파일\AI\CompComposit</Filter>
+    </ClInclude>
+    <ClInclude Include="cAIStatusAttack.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="constants.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="defines.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="macros.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="structures.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="TaskCompileFlag.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+</Project>

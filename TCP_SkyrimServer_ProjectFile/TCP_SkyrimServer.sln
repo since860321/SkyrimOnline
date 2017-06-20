@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TCP_SkyrimServer", "TCP_SkyrimServer.vcxproj", "{F863DCD2-D939-405B-9281-105FFD4B19E4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F863DCD2-D939-405B-9281-105FFD4B19E4}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F863DCD2-D939-405B-9281-105FFD4B19E4}.Debug|Win32.Build.0 = Debug|Win32
+		{F863DCD2-D939-405B-9281-105FFD4B19E4}.Release|Win32.ActiveCfg = Release|Win32
+		{F863DCD2-D939-405B-9281-105FFD4B19E4}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

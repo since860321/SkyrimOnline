@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="TCP_SkyrimServer">
+</Property><Property Name="솔루션 파일" Value="G:\3D Direct3D 포트폴리오 - 이형구 (Team Stack)\TCP_SkyrimServer_ProjectFile\TCP_SkyrimServer.sln">
+</Property><Property Name="Date" Value="2017년 1월 20일 금요일">
+</Property><Property Name="Time" Value="오후 23:48">
+</Property></Properties><Event ErrorLevel="0" Project="TCP_SkyrimServer" Source="TCP_SkyrimServer.vcproj" Description="Converting project file 'G:\3D Direct3D 포트폴리오 - 이형구 (Team Stack)\TCP_SkyrimServer_ProjectFile\TCP_SkyrimServer.vcproj'.">
+</Event><Event ErrorLevel="1" Project="TCP_SkyrimServer" Source="TCP_SkyrimServer.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="0" Project="TCP_SkyrimServer" Source="TCP_SkyrimServer.vcproj" Description="Done converting to new project file 'G:\3D Direct3D 포트폴리오 - 이형구 (Team Stack)\TCP_SkyrimServer_ProjectFile\TCP_SkyrimServer.vcxproj'.">
+</Event><Event ErrorLevel="3" Project="TCP_SkyrimServer" Source="TCP_SkyrimServer.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="TCP_SkyrimServer.sln" Description="솔루션을 변환했습니다.">
+</Event><Event ErrorLevel="3" Project="" Source="TCP_SkyrimServer.sln" Description="Converted">
+</Event></UpgradeLog>
