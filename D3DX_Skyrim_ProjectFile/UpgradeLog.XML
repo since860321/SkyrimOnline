@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="D3DX_Skyrim">
+</Property><Property Name="솔루션 파일" Value="G:\3D Direct3D 포트폴리오 - 이형구 (Team Stack)_\D3DX_Skyrim_ProjectFile\D3DX_Skyrim.sln">
+</Property><Property Name="Date" Value="2017년 2월 9일 목요일">
+</Property><Property Name="Time" Value="오후 23:37">
+</Property></Properties><Event ErrorLevel="0" Project="D3DX_Skyrim" Source="D3DX_Skyrim.vcproj" Description="Converting project file 'G:\3D Direct3D 포트폴리오 - 이형구 (Team Stack)_\D3DX_Skyrim_ProjectFile\D3DX_Skyrim.vcproj'.">
+</Event><Event ErrorLevel="1" Project="D3DX_Skyrim" Source="D3DX_Skyrim.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="0" Project="D3DX_Skyrim" Source="D3DX_Skyrim.vcproj" Description="Done converting to new project file 'G:\3D Direct3D 포트폴리오 - 이형구 (Team Stack)_\D3DX_Skyrim_ProjectFile\D3DX_Skyrim.vcxproj'.">
+</Event><Event ErrorLevel="3" Project="D3DX_Skyrim" Source="D3DX_Skyrim.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="D3DX_Skyrim.sln" Description="솔루션을 변환했습니다.">
+</Event><Event ErrorLevel="3" Project="" Source="D3DX_Skyrim.sln" Description="Converted">
+</Event></UpgradeLog>

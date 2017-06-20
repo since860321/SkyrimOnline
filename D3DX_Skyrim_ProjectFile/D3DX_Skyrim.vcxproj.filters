@@ -1,0 +1,361 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source File">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source File\2. Utility">
+      <UniqueIdentifier>{fc1baadc-0199-487e-94e8-85e7846f8e11}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source File\2. Utility\cAutoReleasePool">
+      <UniqueIdentifier>{bdd0e23b-1662-4fe8-b938-ab6301f633c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source File\2. Utility\cGrid">
+      <UniqueIdentifier>{b8143e16-66b1-431f-959a-7deb7a5d2244}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source File\2. Utility\cLight">
+      <UniqueIdentifier>{2ae61fbe-0ffc-40ca-bd73-5366edf63298}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source File\2. Utility\cGameTime">
+      <UniqueIdentifier>{642795e8-568a-4e52-b2db-2378193ae942}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source File\2. Utility\- Parser">
+      <UniqueIdentifier>{cdf0a92e-9bf1-450d-beef-77606c82cd41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source File\2. Utility\- Parser\cObject">
+      <UniqueIdentifier>{5eb04359-cd66-4146-9d93-ec8e6f291c41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source File\2. Utility\- Parser\cXfileLoader">
+      <UniqueIdentifier>{74f44f35-488a-4d1e-9af7-5c1a4722326a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source File\2. Utility\cSoundMgr">
+      <UniqueIdentifier>{fce0a145-14b8-4204-9156-b6c0c884d64c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source File\1. Object">
+      <UniqueIdentifier>{3db3337e-97d7-4eb7-be2f-7b83aab95122}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source File\1. Object\cVisibleObject">
+      <UniqueIdentifier>{a65c6c99-7c0c-4b22-ba39-078e1f3c52d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source File\1. Object\cVisibleObject\cActiveObject">
+      <UniqueIdentifier>{8a19ae3f-b725-41af-aa2b-eb2a8bb55609}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source File\1. Object\cVisibleObject\cActiveObject\cCharacter">
+      <UniqueIdentifier>{9a9bf629-f64a-47c8-8ae6-4b212bb34a68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source File\1. Object\cVisibleObject\cActiveObject\cCharacter\Player">
+      <UniqueIdentifier>{5f031e25-2788-4a00-b973-c538fd45b0bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source File\1. Object\cVisibleObject\cActiveObject\cCharacter\Non-Player">
+      <UniqueIdentifier>{c939aff9-bf54-418c-a8a6-a90bf2a2a3a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source File\1. Object\cVisibleObject\cStaticObject">
+      <UniqueIdentifier>{abf8d43c-312e-4ae0-a5ea-ee4ccb23246d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source File\1. Object\cVisibleObject\cStaticObject\cTerrain">
+      <UniqueIdentifier>{13c49407-8c65-4097-a11f-26c7d4116843}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source File\1. Object\cVisibleObject\cStaticObject\cSkyBox">
+      <UniqueIdentifier>{cd79f185-cd59-43c1-aa9d-f25600b95a9c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source File\1. Object\cUnvisibleObject">
+      <UniqueIdentifier>{65a29804-fae7-4e19-a5d1-165404828597}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source File\1. Object\cUnvisibleObject\Camera">
+      <UniqueIdentifier>{10706293-237d-401b-bece-dc1c3a215d81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source File\1. Object\cUnvisibleObject\Frustum">
+      <UniqueIdentifier>{ae948820-8e58-4b6e-a2b1-5c03879270e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source File\3. Free Header">
+      <UniqueIdentifier>{b5e10024-51b7-4bfd-b0fc-9c1cfc608635}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source File\0. BaseFramework">
+      <UniqueIdentifier>{d77b4576-79f6-4f00-9994-cc41dd0b2e13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source File\0. BaseFramework\0. MainGame">
+      <UniqueIdentifier>{34e54d06-734e-44a2-a94a-68ffd060b73e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source File\0. BaseFramework\1. Device">
+      <UniqueIdentifier>{d3f5c0ec-bc84-49fb-96f5-3847642d24ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source File\0. BaseFramework\2. WinMain">
+      <UniqueIdentifier>{7cfb055d-6693-43b4-bbfb-844c28f2785e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source File\0. BaseFramework\3. NetworkMgr">
+      <UniqueIdentifier>{c81b6dcd-f2a2-4650-b6e2-89d9c1cc9865}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source File\5. UI">
+      <UniqueIdentifier>{b94fe465-210e-4dd6-a573-ce9606837d85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source File\5. UI\cSprite">
+      <UniqueIdentifier>{7f04dfce-7f34-4bbf-b749-ae85761f8d18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source File\5. UI\Inventory">
+      <UniqueIdentifier>{d427f285-50e0-48fe-bc25-93a3a6bfc34a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source File\5. UI\Menu">
+      <UniqueIdentifier>{9bbfc80c-f30a-4b34-ba27-e64dabecc390}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source File\5. UI\CharacterDamage">
+      <UniqueIdentifier>{6a4ef04f-e0d8-4610-bc46-abd85dc2c695}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ETC">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="ETC\Etc">
+      <UniqueIdentifier>{08fa367e-a425-49cf-8277-480d0ad4e43a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="cOctree.cpp">
+      <Filter>Source File</Filter>
+    </ClCompile>
+    <ClCompile Include="cOctreeNode.cpp">
+      <Filter>Source File</Filter>
+    </ClCompile>
+    <ClCompile Include="cAutoReleasePool.cpp">
+      <Filter>Source File\2. Utility\cAutoReleasePool</Filter>
+    </ClCompile>
+    <ClCompile Include="cAxis.cpp">
+      <Filter>Source File\2. Utility\cGrid</Filter>
+    </ClCompile>
+    <ClCompile Include="cGrid.cpp">
+      <Filter>Source File\2. Utility\cGrid</Filter>
+    </ClCompile>
+    <ClCompile Include="cLight.cpp">
+      <Filter>Source File\2. Utility\cLight</Filter>
+    </ClCompile>
+    <ClCompile Include="cGameTime.cpp">
+      <Filter>Source File\2. Utility\cGameTime</Filter>
+    </ClCompile>
+    <ClCompile Include="cObjFileMesh.cpp">
+      <Filter>Source File\2. Utility\- Parser\cObject</Filter>
+    </ClCompile>
+    <ClCompile Include="cObjParser.cpp">
+      <Filter>Source File\2. Utility\- Parser\cObject</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseBoneHierachy.cpp">
+      <Filter>Source File\2. Utility\- Parser\cXfileLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseSkinnedMesh.cpp">
+      <Filter>Source File\2. Utility\- Parser\cXfileLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="cSoundMgr.cpp">
+      <Filter>Source File\2. Utility\cSoundMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="cObject.cpp">
+      <Filter>Source File\1. Object</Filter>
+    </ClCompile>
+    <ClCompile Include="cVisibleObject.cpp">
+      <Filter>Source File\1. Object\cVisibleObject</Filter>
+    </ClCompile>
+    <ClCompile Include="cActiveObject.cpp">
+      <Filter>Source File\1. Object\cVisibleObject\cActiveObject</Filter>
+    </ClCompile>
+    <ClCompile Include="cCharacter.cpp">
+      <Filter>Source File\1. Object\cVisibleObject\cActiveObject\cCharacter</Filter>
+    </ClCompile>
+    <ClCompile Include="cPlayerCharacter.cpp">
+      <Filter>Source File\1. Object\cVisibleObject\cActiveObject\cCharacter\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="cEnemyCharacter.cpp">
+      <Filter>Source File\1. Object\cVisibleObject\cActiveObject\cCharacter\Non-Player</Filter>
+    </ClCompile>
+    <ClCompile Include="cStaticObject.cpp">
+      <Filter>Source File\1. Object\cVisibleObject\cStaticObject</Filter>
+    </ClCompile>
+    <ClCompile Include="cTerrain.cpp">
+      <Filter>Source File\1. Object\cVisibleObject\cStaticObject\cTerrain</Filter>
+    </ClCompile>
+    <ClCompile Include="cTerrainObject.cpp">
+      <Filter>Source File\1. Object\cVisibleObject\cStaticObject\cTerrain</Filter>
+    </ClCompile>
+    <ClCompile Include="cSKybox.cpp">
+      <Filter>Source File\1. Object\cVisibleObject\cStaticObject\cSkyBox</Filter>
+    </ClCompile>
+    <ClCompile Include="cUnvisibleObject.cpp">
+      <Filter>Source File\1. Object\cUnvisibleObject</Filter>
+    </ClCompile>
+    <ClCompile Include="cCamera.cpp">
+      <Filter>Source File\1. Object\cUnvisibleObject\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="cFrustum.cpp">
+      <Filter>Source File\1. Object\cUnvisibleObject\Frustum</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source File\3. Free Header</Filter>
+    </ClCompile>
+    <ClCompile Include="cMainGame.cpp">
+      <Filter>Source File\0. BaseFramework\0. MainGame</Filter>
+    </ClCompile>
+    <ClCompile Include="cDevice.cpp">
+      <Filter>Source File\0. BaseFramework\1. Device</Filter>
+    </ClCompile>
+    <ClCompile Include="D3DX_Skyrim.cpp">
+      <Filter>Source File\0. BaseFramework\2. WinMain</Filter>
+    </ClCompile>
+    <ClCompile Include="cNetworkMgr.cpp">
+      <Filter>Source File\0. BaseFramework\3. NetworkMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="cResourceMgr.cpp">
+      <Filter>Source File\5. UI</Filter>
+    </ClCompile>
+    <ClCompile Include="CSprite.cpp">
+      <Filter>Source File\5. UI\cSprite</Filter>
+    </ClCompile>
+    <ClCompile Include="cInventory.cpp">
+      <Filter>Source File\5. UI\Inventory</Filter>
+    </ClCompile>
+    <ClCompile Include="cMenuBar.cpp">
+      <Filter>Source File\5. UI\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="cStateBar.cpp">
+      <Filter>Source File\5. UI\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="cCharacterDamage.cpp">
+      <Filter>Source File\5. UI\CharacterDamage</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="cOctree.h">
+      <Filter>Source File</Filter>
+    </ClInclude>
+    <ClInclude Include="cOctreeNode.h">
+      <Filter>Source File</Filter>
+    </ClInclude>
+    <ClInclude Include="cAutoReleasePool.h">
+      <Filter>Source File\2. Utility\cAutoReleasePool</Filter>
+    </ClInclude>
+    <ClInclude Include="cAxis.h">
+      <Filter>Source File\2. Utility\cGrid</Filter>
+    </ClInclude>
+    <ClInclude Include="cGrid.h">
+      <Filter>Source File\2. Utility\cGrid</Filter>
+    </ClInclude>
+    <ClInclude Include="cLight.h">
+      <Filter>Source File\2. Utility\cLight</Filter>
+    </ClInclude>
+    <ClInclude Include="cGameTime.h">
+      <Filter>Source File\2. Utility\cGameTime</Filter>
+    </ClInclude>
+    <ClInclude Include="cObjFileMesh.h">
+      <Filter>Source File\2. Utility\- Parser\cObject</Filter>
+    </ClInclude>
+    <ClInclude Include="cObjParser.h">
+      <Filter>Source File\2. Utility\- Parser\cObject</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseBoneHierachy.h">
+      <Filter>Source File\2. Utility\- Parser\cXfileLoader</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseSkinnedMesh.h">
+      <Filter>Source File\2. Utility\- Parser\cXfileLoader</Filter>
+    </ClInclude>
+    <ClInclude Include="cSoundMgr.h">
+      <Filter>Source File\2. Utility\cSoundMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="cObject.h">
+      <Filter>Source File\1. Object</Filter>
+    </ClInclude>
+    <ClInclude Include="cVisibleObject.h">
+      <Filter>Source File\1. Object\cVisibleObject</Filter>
+    </ClInclude>
+    <ClInclude Include="cActiveObject.h">
+      <Filter>Source File\1. Object\cVisibleObject\cActiveObject</Filter>
+    </ClInclude>
+    <ClInclude Include="cCharacter.h">
+      <Filter>Source File\1. Object\cVisibleObject\cActiveObject\cCharacter</Filter>
+    </ClInclude>
+    <ClInclude Include="cPlayerCharacter.h">
+      <Filter>Source File\1. Object\cVisibleObject\cActiveObject\cCharacter\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="cEnemyCharacter.h">
+      <Filter>Source File\1. Object\cVisibleObject\cActiveObject\cCharacter\Non-Player</Filter>
+    </ClInclude>
+    <ClInclude Include="cStaticObject.h">
+      <Filter>Source File\1. Object\cVisibleObject\cStaticObject</Filter>
+    </ClInclude>
+    <ClInclude Include="cTerrain.h">
+      <Filter>Source File\1. Object\cVisibleObject\cStaticObject\cTerrain</Filter>
+    </ClInclude>
+    <ClInclude Include="cTerrainObject.h">
+      <Filter>Source File\1. Object\cVisibleObject\cStaticObject\cTerrain</Filter>
+    </ClInclude>
+    <ClInclude Include="cSKybox.h">
+      <Filter>Source File\1. Object\cVisibleObject\cStaticObject\cSkyBox</Filter>
+    </ClInclude>
+    <ClInclude Include="cUnvisibleObject.h">
+      <Filter>Source File\1. Object\cUnvisibleObject</Filter>
+    </ClInclude>
+    <ClInclude Include="cCamera.h">
+      <Filter>Source File\1. Object\cUnvisibleObject\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="cFrustum.h">
+      <Filter>Source File\1. Object\cUnvisibleObject\Frustum</Filter>
+    </ClInclude>
+    <ClInclude Include="constants.h">
+      <Filter>Source File\3. Free Header</Filter>
+    </ClInclude>
+    <ClInclude Include="defines.h">
+      <Filter>Source File\3. Free Header</Filter>
+    </ClInclude>
+    <ClInclude Include="macros.h">
+      <Filter>Source File\3. Free Header</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Source File\3. Free Header</Filter>
+    </ClInclude>
+    <ClInclude Include="structures.h">
+      <Filter>Source File\3. Free Header</Filter>
+    </ClInclude>
+    <ClInclude Include="cMainGame.h">
+      <Filter>Source File\0. BaseFramework\0. MainGame</Filter>
+    </ClInclude>
+    <ClInclude Include="cDevice.h">
+      <Filter>Source File\0. BaseFramework\1. Device</Filter>
+    </ClInclude>
+    <ClInclude Include="D3DX_Skyrim.h">
+      <Filter>Source File\0. BaseFramework\2. WinMain</Filter>
+    </ClInclude>
+    <ClInclude Include="cNetworkMgr.h">
+      <Filter>Source File\0. BaseFramework\3. NetworkMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="cMove_BacktoStart.h">
+      <Filter>Source File\5. UI</Filter>
+    </ClInclude>
+    <ClInclude Include="cResourceMgr.h">
+      <Filter>Source File\5. UI</Filter>
+    </ClInclude>
+    <ClInclude Include="CSprite.h">
+      <Filter>Source File\5. UI\cSprite</Filter>
+    </ClInclude>
+    <ClInclude Include="cInventory.h">
+      <Filter>Source File\5. UI\Inventory</Filter>
+    </ClInclude>
+    <ClInclude Include="cMenuBar.h">
+      <Filter>Source File\5. UI\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="cStateBar.h">
+      <Filter>Source File\5. UI\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="cCharacterDamage.h">
+      <Filter>Source File\5. UI\CharacterDamage</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>ETC\Etc</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>ETC\Etc</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt">
+      <Filter>ETC\Etc</Filter>
+    </None>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
+    <None Include="ClassDiagram3.cd" />
+  </ItemGroup>
+</Project>

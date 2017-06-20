@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F20D004C-8421-4915-A712-5CA17B9164EF}</ProjectGuid>
+    <RootNamespace>D3DX_Skyrim</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(IncludePath)</IncludePath>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>d3d9.lib;d3dx9.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="cOctree.cpp" />
+    <ClCompile Include="cOctreeNode.cpp" />
+    <ClCompile Include="cAutoReleasePool.cpp" />
+    <ClCompile Include="cAxis.cpp" />
+    <ClCompile Include="cGrid.cpp" />
+    <ClCompile Include="cLight.cpp" />
+    <ClCompile Include="cGameTime.cpp" />
+    <ClCompile Include="cObjFileMesh.cpp" />
+    <ClCompile Include="cObjParser.cpp" />
+    <ClCompile Include="BaseBoneHierachy.cpp" />
+    <ClCompile Include="BaseSkinnedMesh.cpp" />
+    <ClCompile Include="cSoundMgr.cpp" />
+    <ClCompile Include="cObject.cpp" />
+    <ClCompile Include="cVisibleObject.cpp" />
+    <ClCompile Include="cActiveObject.cpp" />
+    <ClCompile Include="cCharacter.cpp" />
+    <ClCompile Include="cPlayerCharacter.cpp" />
+    <ClCompile Include="cEnemyCharacter.cpp" />
+    <ClCompile Include="cStaticObject.cpp" />
+    <ClCompile Include="cTerrain.cpp" />
+    <ClCompile Include="cTerrainObject.cpp" />
+    <ClCompile Include="cSKybox.cpp" />
+    <ClCompile Include="cUnvisibleObject.cpp" />
+    <ClCompile Include="cCamera.cpp" />
+    <ClCompile Include="cFrustum.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="cMainGame.cpp" />
+    <ClCompile Include="cDevice.cpp" />
+    <ClCompile Include="D3DX_Skyrim.cpp" />
+    <ClCompile Include="cNetworkMgr.cpp" />
+    <ClCompile Include="cResourceMgr.cpp" />
+    <ClCompile Include="CSprite.cpp" />
+    <ClCompile Include="cInventory.cpp" />
+    <ClCompile Include="cMenuBar.cpp" />
+    <ClCompile Include="cStateBar.cpp" />
+    <ClCompile Include="cCharacterDamage.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="cOctree.h" />
+    <ClInclude Include="cOctreeNode.h" />
+    <ClInclude Include="cAutoReleasePool.h" />
+    <ClInclude Include="cAxis.h" />
+    <ClInclude Include="cGrid.h" />
+    <ClInclude Include="cLight.h" />
+    <ClInclude Include="cGameTime.h" />
+    <ClInclude Include="cObjFileMesh.h" />
+    <ClInclude Include="cObjParser.h" />
+    <ClInclude Include="BaseBoneHierachy.h" />
+    <ClInclude Include="BaseSkinnedMesh.h" />
+    <ClInclude Include="cSoundMgr.h" />
+    <ClInclude Include="cObject.h" />
+    <ClInclude Include="cVisibleObject.h" />
+    <ClInclude Include="cActiveObject.h" />
+    <ClInclude Include="cCharacter.h" />
+    <ClInclude Include="cPlayerCharacter.h" />
+    <ClInclude Include="cEnemyCharacter.h" />
+    <ClInclude Include="cStaticObject.h" />
+    <ClInclude Include="cTerrain.h" />
+    <ClInclude Include="cTerrainObject.h" />
+    <ClInclude Include="cSKybox.h" />
+    <ClInclude Include="cUnvisibleObject.h" />
+    <ClInclude Include="cCamera.h" />
+    <ClInclude Include="cFrustum.h" />
+    <ClInclude Include="constants.h" />
+    <ClInclude Include="defines.h" />
+    <ClInclude Include="macros.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="structures.h" />
+    <ClInclude Include="cMainGame.h" />
+    <ClInclude Include="cDevice.h" />
+    <ClInclude Include="D3DX_Skyrim.h" />
+    <ClInclude Include="cNetworkMgr.h" />
+    <ClInclude Include="cMove_BacktoStart.h" />
+    <ClInclude Include="cResourceMgr.h" />
+    <ClInclude Include="CSprite.h" />
+    <ClInclude Include="cInventory.h" />
+    <ClInclude Include="cMenuBar.h" />
+    <ClInclude Include="cStateBar.h" />
+    <ClInclude Include="cCharacterDamage.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
+    <None Include="ClassDiagram3.cd" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
