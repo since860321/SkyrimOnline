@@ -4,6 +4,7 @@
 class cAIStatus;
 class cActiveObject;
 class cCharacter;
+struct stClientInfo;
 /*
 	std::map<int, stClientInfo>::iterator iter = m_Client.begin();
 
