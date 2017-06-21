@@ -1,4 +1,7 @@
-#pragma once
+#ifdef _S_MOD_REMOVE_PRAGMA_ONCE_WARNING_
+#else //_S_MOD_REMOVE_PRAGMA_ONCE_WARNING_
+#pragma once 
+#endif //_S_MOD_REMOVE_PRAGMA_ONCE_WARNING_
 
 //< 싱글턴으로 구현한 서버클래스 (형석)
 

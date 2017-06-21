@@ -1,4 +1,7 @@
-#pragma once
+#ifdef _S_MOD_REMOVE_PRAGMA_ONCE_WARNING_
+#else //_S_MOD_REMOVE_PRAGMA_ONCE_WARNING_
+#pragma once 
+#endif //_S_MOD_REMOVE_PRAGMA_ONCE_WARNING_
 
 //< 상수 정의 부분
 
