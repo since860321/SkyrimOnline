@@ -26,8 +26,8 @@ public:
 	
 	static cAI& GetInstance( void );
 	
-	void SetPlayerInfo(IN	std::map<int ,stClientInfo>* m_Client);
+	void SetPlayerInfo(std::map<int ,stClientInfo>* m_Client);
 
-	void AI(IN	stEnemyInfo*  MonsterInfo);
+	void AI(stEnemyInfo*  MonsterInfo);
 
 };

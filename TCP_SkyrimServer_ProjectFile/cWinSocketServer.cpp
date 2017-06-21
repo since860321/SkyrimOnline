@@ -135,7 +135,7 @@ void cWinSocketServer::AcceptClient( void )
 	}//< while
 }
 
-void cWinSocketServer::SendInitiateInfo( IN SOCKET sock, OUT DWORD* clientID )
+void cWinSocketServer::SendInitiateInfo(SOCKET sock, DWORD* clientID )
 {
 	char szBuf[1024] = {0};
 
@@ -197,7 +197,7 @@ void cWinSocketServer::SendInitiateInfo( IN SOCKET sock, OUT DWORD* clientID )
 	}
 }
 
-void cWinSocketServer::SendEnemyInitiateInfo( IN SOCKET sock )
+void cWinSocketServer::SendEnemyInitiateInfo(SOCKET sock )
 {
 	char szBuf[1024] = {0};
 
@@ -495,7 +495,7 @@ DWORD WINAPI ProcessReceive( LPVOID arg )
 	return 0;
 }
 
-void cWinSocketServer::DeleteClientProcess( IN SOCKET deleteClientSock )
+void cWinSocketServer::DeleteClientProcess(SOCKET deleteClientSock )
 {
 	int addrlen;
 	SOCKADDR_IN clientaddr;
@@ -581,7 +581,7 @@ void cWinSocketServer::SendToServer( stEnemyTransportInfo Info )
 	}
 }
 
-void cWinSocketServer::SendToServer( IN int nClientIndex, IN int nClientHp )
+void cWinSocketServer::SendToServer(int nClientIndex, int nClientHp )
 {
 	/* 해당 인덱스의 클라이언트 HP를 감소시키는 패킷을 보내라 */
 	if( m_bUsed[nClientIndex] == false ) return; //< 접속 안한 클라이언트는 패스

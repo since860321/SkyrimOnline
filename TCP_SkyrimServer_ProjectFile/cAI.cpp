@@ -21,7 +21,7 @@ static cAI AI;
 return AI;
 }
 	
-void cAI::SetPlayerInfo(IN	std::map<int ,stClientInfo>* m_Client)
+void cAI::SetPlayerInfo(std::map<int ,stClientInfo>* m_Client)
 {
 	this->PlayerInfo = m_Client;
 }
@@ -37,7 +37,7 @@ void cAI::SetPlayerInfo(IN	std::map<int ,stClientInfo>* m_Client)
 	//DWORD			dwHpMax;
 	//DWORD			dwAttackDamage;
 	//D3DXVECTOR3		vStartPos;
-void cAI::AI(IN	stEnemyInfo*  MonsterInfo)
+void cAI::AI(stEnemyInfo*  MonsterInfo)
 {
 	switch(MonsterInfo->MonsterType)
 	{

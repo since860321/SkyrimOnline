@@ -29,11 +29,11 @@ public:
 	void AcceptClient( void );				//< 클라이언트 접속을 받아서 쓰레드 생성
 	void CloseSocket( void );
 
-	void SendInitiateInfo( IN SOCKET sock, OUT DWORD* clientID );
-	void SendEnemyInitiateInfo( IN SOCKET sock );
+	void SendInitiateInfo(SOCKET sock, DWORD* clientID );
+	void SendEnemyInitiateInfo(SOCKET sock );
 
 	int recvn( SOCKET s, char* buf, int len, int flags );
-	void DeleteClientProcess( IN SOCKET deleteClientSock );
+	void DeleteClientProcess(SOCKET deleteClientSock );
 
 	//< 에러 출력 함수
 	void err_quit( char* msg );		//< 에러 메시지 출력 후 프로그램 종료
@@ -48,6 +48,6 @@ public:
 	//< properties
 	inline SOCKET* GetListenSocketPtr( void ) { return &m_ListenSock; }
 	void SendToServer( stEnemyTransportInfo Info ); //< 매니저에게 구조체 전달
-	void SendToServer( IN int nClientIndex, IN int nClientHp ); //< 매니저에게 클라이언트 HP 정보 전달
+	void SendToServer(int nClientIndex, int nClientHp ); //< 매니저에게 클라이언트 HP 정보 전달
 };
 
