@@ -1,6 +1,7 @@
 #pragma once
 
 //#include "cEnemyCharacter.h"
+#include "stdafx.h"
 
 class cComposite
 {
