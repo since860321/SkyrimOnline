@@ -1,6 +1,6 @@
 #pragma once
 
-#ifdef _WIN32
+#ifdef WIN32
 #else
 typedef unsigned long DWORD;
 typedef unsigned short WORD;
