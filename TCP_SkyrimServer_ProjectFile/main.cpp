@@ -21,7 +21,11 @@ CRITICAL_SECTION cs;
 void CreateAIThread( void );
 DWORD WINAPI ProcessAI( LPVOID arg ); //< AI ¾²·¹µå
 
+#ifdef WIN32
 int _tmain(int argc, _TCHAR* argv[])
+#else 
+int _tmain(int argc, char* argv[])
+#endif
 {
 	InitializeCriticalSection(&cs);	
 
