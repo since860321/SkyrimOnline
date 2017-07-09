@@ -161,13 +161,16 @@
     <ClInclude Include="macros.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="structures.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="targetver.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="TaskCompileFlag.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Shared_Skyrim_ProjectFile\PacketStructure.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Shared_Skyrim_ProjectFile\CSCommonConst.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

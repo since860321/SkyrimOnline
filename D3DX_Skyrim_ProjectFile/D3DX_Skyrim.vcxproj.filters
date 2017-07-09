@@ -68,9 +68,6 @@
     <Filter Include="Source File\1. Object\cUnvisibleObject\Frustum">
       <UniqueIdentifier>{ae948820-8e58-4b6e-a2b1-5c03879270e3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source File\3. Free Header">
-      <UniqueIdentifier>{b5e10024-51b7-4bfd-b0fc-9c1cfc608635}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source File\0. BaseFramework">
       <UniqueIdentifier>{d77b4576-79f6-4f00-9994-cc41dd0b2e13}</UniqueIdentifier>
     </Filter>
@@ -107,6 +104,12 @@
     </Filter>
     <Filter Include="ETC\Etc">
       <UniqueIdentifier>{08fa367e-a425-49cf-8277-480d0ad4e43a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source File\3. Precompiled Header">
+      <UniqueIdentifier>{b5e10024-51b7-4bfd-b0fc-9c1cfc608635}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source File\6. Shared">
+      <UniqueIdentifier>{bdced38a-4639-4fa2-b89e-4268586a35a3}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -186,7 +189,7 @@
       <Filter>Source File\1. Object\cUnvisibleObject\Frustum</Filter>
     </ClCompile>
     <ClCompile Include="stdafx.cpp">
-      <Filter>Source File\3. Free Header</Filter>
+      <Filter>Source File\3. Precompiled Header</Filter>
     </ClCompile>
     <ClCompile Include="cMainGame.cpp">
       <Filter>Source File\0. BaseFramework\0. MainGame</Filter>
@@ -296,19 +299,19 @@
       <Filter>Source File\1. Object\cUnvisibleObject\Frustum</Filter>
     </ClInclude>
     <ClInclude Include="constants.h">
-      <Filter>Source File\3. Free Header</Filter>
+      <Filter>Source File\3. Precompiled Header</Filter>
     </ClInclude>
     <ClInclude Include="defines.h">
-      <Filter>Source File\3. Free Header</Filter>
+      <Filter>Source File\3. Precompiled Header</Filter>
     </ClInclude>
     <ClInclude Include="macros.h">
-      <Filter>Source File\3. Free Header</Filter>
+      <Filter>Source File\3. Precompiled Header</Filter>
     </ClInclude>
     <ClInclude Include="stdafx.h">
-      <Filter>Source File\3. Free Header</Filter>
+      <Filter>Source File\3. Precompiled Header</Filter>
     </ClInclude>
     <ClInclude Include="structures.h">
-      <Filter>Source File\3. Free Header</Filter>
+      <Filter>Source File\3. Precompiled Header</Filter>
     </ClInclude>
     <ClInclude Include="cMainGame.h">
       <Filter>Source File\0. BaseFramework\0. MainGame</Filter>
@@ -348,6 +351,12 @@
     </ClInclude>
     <ClInclude Include="targetver.h">
       <Filter>ETC\Etc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Shared_Skyrim_ProjectFile\CSCommonConst.h">
+      <Filter>Source File\6. Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Shared_Skyrim_ProjectFile\PacketStructure.h">
+      <Filter>Source File\6. Shared</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -28,6 +28,6 @@ public: virtual varType Get##funName(void) const { return varName; }\
 public: virtual void Set##funName(varType var){ varName = var; }
 
 #define sgDevice cDevice::GetInstance().GetDevice()
-#define sgNetwork cNetworkMgr::GetInstance()
+#define NetworkMgr cNetworkMgr::GetInstance()
 #define sgFrustum cFrustum::GetInstance()
 

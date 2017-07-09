@@ -213,5 +213,5 @@ void cEnemyCharacter::Update()
 
 void cEnemyCharacter::HPDamage(int nDamage)
 {
-	sgNetwork.SendToServer(this->m_stEnemyData.bMyIndex,nDamage);
+	NetworkMgr.SendToServer(this->m_stEnemyData.bMyIndex,nDamage);
 }

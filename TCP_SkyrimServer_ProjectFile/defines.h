@@ -17,6 +17,7 @@ typedef unsigned char  BYTE;
 #include <queue>
 #include <map>
 
+#include "../Shared_Skyrim_ProjectFile/PacketStructure.h"
 
 #include "TaskCompileFlag.h"
 
@@ -27,7 +28,6 @@ extern CRITICAL_SECTION cs;
 
 #include "macros.h"
 #include "constants.h"
-#include "structures.h"
 
 
 

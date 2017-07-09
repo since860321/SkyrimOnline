@@ -40,7 +40,7 @@ void cAI::AI(stEnemyInfo*  MonsterInfo)
 {
 	switch(MonsterInfo->MonsterType)
 	{
-	case MONSTER_DRAGON:
+	case CT_MONSTER_DRAGON:
 		{
 			
 		m_AIStatus = m_DragonAIStatus;

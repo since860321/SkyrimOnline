@@ -157,15 +157,15 @@ bool cMainGame::Setup( void )
 	m_nProcess += 5;
 	strcpy( m_szLoadFileName, "네트워크 설정중..." );
 
-	sgNetwork.CreateSocket(); //< 클라이언트 소켓 생성
- 	sgNetwork.SetReceiver( (cPlayerCharacter*)m_pPlayer, (cEnemyCharacter*)m_pDragon ); //< 데이터 전달받는 객체 설정
-	sgNetwork.GetWeaponMeshPtr( m_pWeapon ); //< 다른 클라이언트의 무기 출력을 위한 매시 포인터 얻어오기
+	NetworkMgr.CreateSocket(); //< 클라이언트 소켓 생성
+ 	NetworkMgr.SetReceiver( (cPlayerCharacter*)m_pPlayer, (cEnemyCharacter*)m_pDragon ); //< 데이터 전달받는 객체 설정
+	NetworkMgr.GetWeaponMeshPtr( m_pWeapon ); //< 다른 클라이언트의 무기 출력을 위한 매시 포인터 얻어오기
 
 	cSoundMgr::GetInstance()->SoundStop(SOUND_LODING); // 로딩 배경음
 	cSoundMgr::GetInstance()->SoundPlay(SOUND_NORMAL,3.0f); // 기본 배경음
 
-	if( FAILED( sgNetwork.ConnectServer() ) ) return true; //< 서버에 접속
- 	sgNetwork.CreateNetworkThread();	//< 리시브 전용 스레드 생성
+	if( FAILED( NetworkMgr.ConnectServer() ) ) return true; //< 서버에 접속
+ 	NetworkMgr.CreateNetworkThread();	//< 리시브 전용 스레드 생성
 
 	return true;
 }
@@ -408,7 +408,7 @@ void cMainGame::Update( void )
 	//< 컬링후에 랜더해야 하는 대상과 충돌처리
 	//m_pOctree->Collision( m_pOctree->GetRootPtr(), (cPlayerCharacter*) m_pPlayer );
 
-	sgNetwork.MoveOtherClient();
+	NetworkMgr.MoveOtherClient();
 	
 
 	// 픽킹
@@ -478,7 +478,7 @@ void cMainGame::Render( void )
 	
 		sgFrustum.DebugRender();
 
-		sgNetwork.RenderOtherClient();		
+		NetworkMgr.RenderOtherClient();		
         sgDevice->EndScene();
     }
 

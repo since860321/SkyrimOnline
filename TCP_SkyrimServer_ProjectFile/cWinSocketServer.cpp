@@ -24,7 +24,7 @@ cWinSocketServer::cWinSocketServer(void)
 		m_pEnemy[i].nAnimationIndex = 0;
 		m_pEnemy[i].nEnemyIndex = i;
 		m_pEnemy[i].fPerceptionLength = 1000;
-		m_pEnemy[i].MonsterType = MONSTER_DRAGON;
+		m_pEnemy[i].MonsterType = CT_MONSTER_DRAGON;
 		m_pEnemy[i].vTargetPos = D3DXVECTOR3( 0, 0, 0 );
 		m_pEnemy[i].fAttackLange = 400.0f;
 		m_pEnemy[i].dwAttackCoolTime	=	3000;	

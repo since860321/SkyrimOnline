@@ -1,7 +1,7 @@
 #pragma once
 #include "stdafx.h"
 
-
+#include "../Shared_Skyrim_ProjectFile/PacketStructure.h"
 
 #include "constants.h"	//< 매크로 상수
 #include "structures.h"	//< 구조체 정의

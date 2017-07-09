@@ -112,6 +112,8 @@
     <ClCompile Include="cStatusThink.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Shared_Skyrim_ProjectFile\CSCommonConst.h" />
+    <ClInclude Include="..\Shared_Skyrim_ProjectFile\PacketStructure.h" />
     <ClInclude Include="cWinSocketServer.h" />
     <ClInclude Include="cAI.h" />
     <ClInclude Include="cAIStatus.h" />
@@ -135,7 +137,6 @@
     <ClInclude Include="constants.h" />
     <ClInclude Include="defines.h" />
     <ClInclude Include="macros.h" />
-    <ClInclude Include="structures.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="TaskCompileFlag.h" />
   </ItemGroup>

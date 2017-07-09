@@ -2,7 +2,7 @@
 
 //몬스터 AI 용 클래스 싱글톤 : 케릭터 정보 포인터를 가지고 몬스터정보 포인터를 받는다
 
-#include "structures.h"
+#include "defines.h"
 
 class cAIStatus;
 class cActiveObject;

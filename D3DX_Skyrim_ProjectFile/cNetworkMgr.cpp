@@ -161,10 +161,10 @@ DWORD WINAPI ProcessReceive( LPVOID arg ) //< 리시브 전용 스레드
 	while( true )
 	{
 		//< 데이터 받기
-		retval = sgNetwork.PacketToken( sock, &QueueBuf, RECVBUFSIZE, 0, part, nNeedSize );
+		retval = NetworkMgr.PacketToken( sock, &QueueBuf, RECVBUFSIZE, 0, part, nNeedSize );
 		if( retval == SOCKET_ERROR )
 		{
-			sgNetwork.err_display( "recv()" );
+			NetworkMgr.err_display( "recv()" );
 			break;
 		}
 		else if( retval == 0 )

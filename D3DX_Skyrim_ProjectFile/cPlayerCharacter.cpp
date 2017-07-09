@@ -360,7 +360,7 @@ void cPlayerCharacter::Battle_Move()
 		
 	
 
-	sgNetwork.SendToServer( m_stCharacterInfo, m_TransformInfo, vDrt, fMoveSpeed, m_stCharacterInfo.m_Animation );  
+	NetworkMgr.SendToServer( m_stCharacterInfo, m_TransformInfo, vDrt, fMoveSpeed, m_stCharacterInfo.m_Animation );  
 }
 
 

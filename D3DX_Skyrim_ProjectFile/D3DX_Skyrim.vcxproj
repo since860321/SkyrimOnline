@@ -131,6 +131,8 @@
     <ClCompile Include="cCharacterDamage.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Shared_Skyrim_ProjectFile\CSCommonConst.h" />
+    <ClInclude Include="..\Shared_Skyrim_ProjectFile\PacketStructure.h" />
     <ClInclude Include="cOctree.h" />
     <ClInclude Include="cOctreeNode.h" />
     <ClInclude Include="cAutoReleasePool.h" />
