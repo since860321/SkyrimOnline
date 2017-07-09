@@ -1,4 +1,3 @@
-#include "StdAfx.h"
 #include "cMoveSelect.h"
 #include "cMove_Chase.h"
 #include "cMove_BacktoStart.h"

@@ -1,5 +1,5 @@
 #pragma once
-
+#include "defines.h"
 //< 구조체 정의부
 
 //< 초기 접속 시 사용되는 패킷

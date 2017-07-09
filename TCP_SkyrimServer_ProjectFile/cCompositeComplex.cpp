@@ -1,4 +1,3 @@
-#include "StdAfx.h"
 #include "cCompositeComplex.h"
 
 cCompositeComplex::cCompositeComplex(void)

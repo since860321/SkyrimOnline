@@ -1,4 +1,3 @@
-#include "StdAfx.h"
 #include "cThisAlive.h"
 #include "cWinSocketServer.h"
 

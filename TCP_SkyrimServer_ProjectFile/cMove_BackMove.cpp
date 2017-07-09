@@ -1,4 +1,3 @@
-#include "StdAfx.h"
 #include "cMove_BackMove.h"
 
 cMove_BackMove::cMove_BackMove(void)

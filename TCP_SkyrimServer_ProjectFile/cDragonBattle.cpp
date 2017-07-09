@@ -1,4 +1,3 @@
-#include "StdAfx.h"
 #include "cDragonBattle.h"
 #include "cMove_Chase.h"
 #include "cDragonAttack.h"

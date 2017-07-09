@@ -1,4 +1,3 @@
-#include "StdAfx.h"
 #include "cStatusThink.h"
 #include "cDragonBattle.h"
 #include "cDragonReady.h"

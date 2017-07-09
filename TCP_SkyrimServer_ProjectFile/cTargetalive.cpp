@@ -1,4 +1,3 @@
-#include "StdAfx.h"
 #include "cTargetalive.h"
 
 cTargetalive::cTargetalive(void)

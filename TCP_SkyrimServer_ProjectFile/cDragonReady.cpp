@@ -1,4 +1,3 @@
-#include "StdAfx.h"
 #include "cDragonReady.h"
 #include "cMove_BacktoStart.h"
 

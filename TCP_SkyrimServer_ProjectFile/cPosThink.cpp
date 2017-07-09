@@ -1,4 +1,3 @@
-#include "StdAfx.h"
 #include "cPosThink.h"
 
 cPosThink::cPosThink(void)

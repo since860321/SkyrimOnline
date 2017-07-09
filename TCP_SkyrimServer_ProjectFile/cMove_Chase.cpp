@@ -1,4 +1,3 @@
-#include "StdAfx.h"
 #include "cMove_Chase.h"
 
 cMove_Chase::cMove_Chase(void)

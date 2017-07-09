@@ -1,4 +1,4 @@
-#include "stdafx.h"
+#include "defines.h"
 #include "cWinSocketServer.h"
 #include "cAI.h"
 

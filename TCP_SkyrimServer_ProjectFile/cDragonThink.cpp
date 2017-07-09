@@ -1,4 +1,3 @@
-#include "StdAfx.h"
 #include "cDragonThink.h"
 #include "cThisAlive.h"
 #include "cTargetalive.h"

@@ -1,6 +1,6 @@
 // TCP_SkyrimServer.cpp : 콘솔 응용 프로그램에 대한 진입점을 정의합니다.
 //
-#include "stdafx.h"
+#include "defines.h"
 #include "cWinSocketServer.h"
 #ifdef _S_MOD_MONSTER_AI_FROM_SERVER_TO_CLIENT_
 int _tmain(int argc, _TCHAR* argv[])

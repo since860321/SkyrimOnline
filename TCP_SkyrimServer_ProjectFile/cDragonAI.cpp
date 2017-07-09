@@ -1,4 +1,3 @@
-#include "StdAfx.h"
 #include "cDragonAI.h"
 #include "cDragonThink.h"
 
