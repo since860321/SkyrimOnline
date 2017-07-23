@@ -18,14 +18,23 @@ cWinSocketServer::cWinSocketServer(void)
 		m_pEnemy[i].dwAttackDamage = 4;
 		m_pEnemy[i].dwHp =	m_pEnemy[i].dwHpMax= 50;
 		m_pEnemy[i].dwHpReduce =0;
+#ifdef _S_MOD_D3DX9_API_CUSTOM_
+		m_pEnemy[i].vPos = vector(0,0,0);
+		m_pEnemy[i].vStartPos = vector(0,0,0);
+#else //_S_MOD_D3DX9_API_CUSTOM_
 		m_pEnemy[i].vPos = D3DXVECTOR3(0,0,0);
 		m_pEnemy[i].vStartPos = D3DXVECTOR3(0,0,0);
+#endif //_S_MOD_D3DX9_API_CUSTOM_
 		m_pEnemy[i].pTarget = NULL;
 		m_pEnemy[i].nAnimationIndex = 0;
 		m_pEnemy[i].nEnemyIndex = i;
 		m_pEnemy[i].fPerceptionLength = 1000;
 		m_pEnemy[i].MonsterType = CT_MONSTER_DRAGON;
+#ifdef _S_MOD_D3DX9_API_CUSTOM_
+		m_pEnemy[i].vTargetPos = vector( 0, 0, 0 );
+#else //_S_MOD_D3DX9_API_CUSTOM_
 		m_pEnemy[i].vTargetPos = D3DXVECTOR3( 0, 0, 0 );
+#endif //_S_MOD_D3DX9_API_CUSTOM_
 		m_pEnemy[i].fAttackLange = 400.0f;
 		m_pEnemy[i].dwAttackCoolTime	=	3000;	
 		m_pEnemy[i].dwAttackTime		=	0;	

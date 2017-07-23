@@ -90,6 +90,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="customVector.cpp" />
     <ClCompile Include="cWinSocketServer.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="cAI.cpp" />
@@ -114,6 +115,7 @@
   <ItemGroup>
     <ClInclude Include="..\Shared_Skyrim_ProjectFile\CSCommonConst.h" />
     <ClInclude Include="..\Shared_Skyrim_ProjectFile\PacketStructure.h" />
+    <ClInclude Include="customVector.h" />
     <ClInclude Include="cWinSocketServer.h" />
     <ClInclude Include="cAI.h" />
     <ClInclude Include="cAIStatus.h" />

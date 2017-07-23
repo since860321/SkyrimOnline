@@ -23,7 +23,11 @@ cDragonBattle::~cDragonBattle(void)
 
 void cDragonBattle::Process( stEnemyInfo* target )
 {
+#ifdef _S_MOD_D3DX9_API_CUSTOM_
+	vector vToCharacter = (target->pTarget->transformInfo.vPos) - (target->vPos);
+#else //_S_MOD_D3DX9_API_CUSTOM_
 	D3DXVECTOR3 vToCharacter = (target->pTarget->transformInfo.vPos) - (target->vPos);
+#endif //_S_MOD_D3DX9_API_CUSTOM_
 
 	float fToCharacterLength  = vToCharacter.x * vToCharacter.x + vToCharacter.y * vToCharacter.y + vToCharacter.z * vToCharacter.z;
 

@@ -5,19 +5,13 @@
 #include <stdio.h>
 #ifdef WIN32
 #include <tchar.h>
-#else
-typedef unsigned long DWORD;
-typedef unsigned short WORD;
-typedef unsigned char  BYTE;
 #endif
 
 #include <iostream>
 #include <assert.h>
-#include <d3dx9.h>
 #include <queue>
 #include <map>
-
-#include "../Shared_Skyrim_ProjectFile/PacketStructure.h"
+#include <winsock2.h>
 
 #include "TaskCompileFlag.h"
 
@@ -29,7 +23,11 @@ extern CRITICAL_SECTION cs;
 #include "macros.h"
 #include "constants.h"
 
+#ifdef _S_MOD_D3DX9_API_CUSTOM_
+#include "customVector.h"
+#else //_S_MOD_D3DX9_API_CUSTOM_
+#include <d3dx9.h>
+#endif //_S_MOD_D3DX9_API_CUSTOM_
 
-
-
+#include "../Shared_Skyrim_ProjectFile/PacketStructure.h"
 

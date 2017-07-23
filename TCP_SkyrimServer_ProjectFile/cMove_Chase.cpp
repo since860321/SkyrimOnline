@@ -10,11 +10,17 @@ cMove_Chase::~cMove_Chase(void)
 
 void cMove_Chase::Process( stEnemyInfo* targetMonster )
 {
-
+#ifdef _S_MOD_D3DX9_API_CUSTOM_
+	vector vTarget	=	targetMonster->pTarget->transformInfo.vPos;
+	vector vMoster	=	targetMonster->vPos;
+	vector vPos = vTarget - vMoster;
+	vector::normalize(&vPos,&vPos);
+#else //_S_MOD_D3DX9_API_CUSTOM_
 	D3DXVECTOR3 vTarget	=	targetMonster->pTarget->transformInfo.vPos;
 	D3DXVECTOR3 vMoster	=	targetMonster->vPos;
 	D3DXVECTOR3 vPos = vTarget - vMoster;
 	D3DXVec3Normalize(&vPos,&vPos);
+#endif //_S_MOD_D3DX9_API_CUSTOM_
 
 	targetMonster->vTargetPos	=	vTarget;
 	targetMonster->vPos += vPos * targetMonster->fMoveSpeed ;

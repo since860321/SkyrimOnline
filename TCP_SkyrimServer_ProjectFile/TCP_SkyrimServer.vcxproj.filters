@@ -90,6 +90,9 @@
     <ClCompile Include="cStatusThink.cpp">
       <Filter>소스 파일\AI\CompComposit</Filter>
     </ClCompile>
+    <ClCompile Include="customVector.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cWinSocketServer.h">
@@ -171,6 +174,9 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="..\Shared_Skyrim_ProjectFile\CSCommonConst.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="customVector.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
