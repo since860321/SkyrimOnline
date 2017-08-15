@@ -61,7 +61,7 @@ void vector::normalize(vector *pOut, const vector *pV)
 	if (pV == nullptr)
 		return ;
 
-	int sqrtSum = sqrt(pV->x) + sqrt(pV->y) + sqrt(pV->z);
+	float sqrtSum = sqrt(pV->x) + sqrt(pV->y) + sqrt(pV->z);
 	pOut->x = (pV->x)/sqrtSum;
 	pOut->y = (pV->y)/sqrtSum;
 	pOut->z = (pV->z)/sqrtSum;

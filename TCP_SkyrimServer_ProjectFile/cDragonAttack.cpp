@@ -11,13 +11,20 @@ cDragonAttack::~cDragonAttack(void)
 
 void cDragonAttack::Process( stEnemyInfo* target )
 {
+#ifdef _S_LINUX_EPOLL_
+	unsigned int dwTime; //=GetTickCount();
+#else //_S_LINUX_EPOLL_
 	DWORD dwTime = GetTickCount();
+#endif //_S_LINUX_EPOLL_
 
 	if(target->dwAttackTime	<	dwTime)
 	{	
 		target->dwAttackTime = dwTime + target->dwAttackCoolTime;
-		
+
+#ifdef _S_LINUX_EPOLL_
+#else //_S_LINUX_EPOLL_
 		sgNetwork.SendToServer(target->pTarget->nID,target->dwAttackDamage);
+#endif //_S_LINUX_EPOLL_
 
 		target->nAnimationIndex = (int)D_ground_bite;
 

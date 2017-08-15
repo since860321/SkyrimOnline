@@ -33,8 +33,12 @@ void cDragonBattle::Process( stEnemyInfo* target )
 
 	float fAttackLange = target->fAttackLange * target->fAttackLange;
 
+#ifdef _S_LINUX_EPOLL_
+	unsigned int dwTime;// = GetTickCount();
+#else //_S_LINUX_EPOLL_
 	DWORD dwTime = GetTickCount();
-	
+#endif //_S_LINUX_EPOLL_
+
 	if(fToCharacterLength < fAttackLange/2)
 	{
 		Data[2]->Process(target);

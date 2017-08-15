@@ -33,8 +33,11 @@ void cDragonReady::Process( stEnemyInfo* target )
 	if(target->dwHpReduce > 0)
 	{
 	
-
+#ifdef _S_LINUX_EPOLL_
+		unsigned int dwTime;// = GetTickCount();
+#else //_S_LINUX_EPOLL_
 		DWORD dwTime = GetTickCount();
+#endif //_S_LINUX_EPOLL_
 
 		if(target->dwRecoveryTime == UINT_MAX)
 		{

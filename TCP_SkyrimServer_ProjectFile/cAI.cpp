@@ -58,8 +58,10 @@ void cAI::AI(stEnemyInfo*  MonsterInfo)
 	if(!PlayerInfo)
 		return;
 
+#ifdef _S_LINUX_EPOLL_
+#else //_S_LINUX_EPOLL_
 	EnterCriticalSection(&cs);
-
+#endif //_S_LINUX_EPOLL_
 
 	//system("cls");
 	std::map<int ,stClientInfo>::iterator iter = PlayerInfo->begin();
@@ -75,8 +77,10 @@ void cAI::AI(stEnemyInfo*  MonsterInfo)
 			nLiveCnt ++;
 		}
 	}
-
+#ifdef _S_LINUX_EPOLL_
+#else //_S_LINUX_EPOLL_
 	LeaveCriticalSection(&cs);
+#endif //_S_LINUX_EPOLL_
 
 	std::cout << "접속한 클라이언트 수 : " << nLiveCnt << std::endl;
 

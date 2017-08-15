@@ -16,19 +16,25 @@ int _tmain(int argc, _TCHAR* argv[])
 #else //_S_MOD_MONSTER_AI_FROM_SERVER_TO_CLIENT_
 #include "cAI.h"
 
+#ifdef _S_LINUX_EPOLL_
+#else //_S_LINUX_EPOLL_
 CRITICAL_SECTION cs;
+#endif _S_LINUX_EPOLL_
 
 void CreateAIThread( void );
+#ifdef _S_LINUX_EPOLL_
+#else //_S_LINUX_EPOLL_
 DWORD WINAPI ProcessAI( LPVOID arg ); //< AI 쓰레드
-
+#endif //_S_LINUX_EPOLL_
 #ifdef WIN32
 int _tmain(int argc, _TCHAR* argv[])
 #else 
 int _tmain(int argc, char* argv[])
 #endif
 {
+#ifdef _S_LINUX_EPOLL_
+#else //_S_LINUX_EPOLL_
 	InitializeCriticalSection(&cs);	
-
 	sgNetwork.CreateListenSocket();
 	sgNetwork.Bind();
 	sgNetwork.Listen();
@@ -39,12 +45,15 @@ int _tmain(int argc, char* argv[])
 	sgNetwork.CloseSocket();
 
 	DeleteCriticalSection(&cs);
+#endif //_S_LINUX_EPOLL_
 
 	return 0;
 }
 
 void CreateAIThread( void )
 {
+#ifdef _S_LINUX_EPOLL_
+#else //_S_LINUX_EPOLL_
 	HANDLE hThread;		//< 스레드 핸들
 	DWORD ThreadId;		//< 스레드 ID
 
@@ -58,8 +67,10 @@ void CreateAIThread( void )
 	{
 		CloseHandle( hThread );
 	}
+#endif //_S_LINUX_EPOLL_
 }
-
+#ifdef _S_LINUX_EPOLL_
+#else //_S_LINUX_EPOLL_
 DWORD WINAPI ProcessAI( LPVOID arg )
 {
 	DWORD m_dwSendTime[MAXENEMY];
@@ -95,4 +106,5 @@ DWORD WINAPI ProcessAI( LPVOID arg )
 
 	return 0;
 }
+#endif //_S_LINUX_EPOLL_
 #endif //_S_MOD_MONSTER_AI_FROM_SERVER_TO_CLIENT_

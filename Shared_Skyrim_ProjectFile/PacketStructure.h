@@ -60,7 +60,10 @@ namespace BaseD3D
 #pragma pack(1)
 struct stClientInfo 
 {
+#ifdef _S_LINUX_EPOLL_
+#else //_S_LINUX_EPOLL_
 	SOCKET sock;
+#endif //_S_LINUX_EPOLL_
 	int		nID;
 	int		nHP;	
 	bool	bAlive;

@@ -7,3 +7,4 @@
 #define _S_MOD_CLEAN_UP_FILE_DEPENDANCY_			// 2017.06.21 파일간 종속성 정리
 
 #define _S_MOD_D3DX9_API_CUSTOM_					// 2017.07.23 리눅스에 d3dx sdk 설치 불가 이슈로 인해 직접 만듦(어차피 추후에 udp 모듈 구현되면 ai 모듈 클라로 옮길것임)
+#define _S_LINUX_EPOLL_								// 2017.07.23 winsock2 -> linux/epoll 방식으로 구현

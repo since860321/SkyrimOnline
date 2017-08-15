@@ -4,7 +4,8 @@
 #endif //_S_MOD_REMOVE_PRAGMA_ONCE_WARNING_
 
 //< 싱글턴으로 구현한 서버클래스 (형석)
-#ifdef WIN32
+#ifdef _S_LINUX_EPOLL_
+#else //_S_LINUX_EPOLL_
 class cWinSocketServer
 {
 	WSADATA		m_Wsa;
@@ -53,4 +54,4 @@ public:
 	void SendToServer( stEnemyTransportInfo Info ); //< 매니저에게 구조체 전달
 	void SendToServer(int nClientIndex, int nClientHp ); //< 매니저에게 클라이언트 HP 정보 전달
 };
-#endif //WIN32
+#endif //_S_LINUX_EPOLL_

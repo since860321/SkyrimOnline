@@ -1,7 +1,8 @@
 #include "defines.h"
 #include "cWinSocketServer.h"
 #include "cAI.h"
-
+#ifdef _S_LINUX_EPOLL_
+#else //_S_LINUX_EPOLL_
 //< 스레드 함수 : 클라이언트와 데이터 통신
 DWORD WINAPI ProcessReceive( LPVOID arg );
 
@@ -618,5 +619,4 @@ void cWinSocketServer::SendToServer(int nClientIndex, int nClientHp )
 		return;
 	}
 }
-
-
+#endif //_S_LINUX_EPOLL_
