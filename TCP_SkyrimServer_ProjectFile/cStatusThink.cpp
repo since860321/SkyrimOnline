@@ -2,6 +2,10 @@
 #include "cDragonBattle.h"
 #include "cDragonReady.h"
 
+#ifndef UINT_MAX
+#define UINT_MAX ((unsigned int)-1)
+#endif  
+
 cStatusThink::cStatusThink(void)
 {
 	cComposite* newData;

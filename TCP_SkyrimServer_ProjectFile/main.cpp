@@ -29,9 +29,12 @@ DWORD WINAPI ProcessAI( LPVOID arg ); //< AI ¾²·¹µå
 #ifdef WIN32
 int _tmain(int argc, _TCHAR* argv[])
 #else 
-int _tmain(int argc, char* argv[])
+//int _tmain(int argc, char* argv[])
+int main(void)
 #endif
 {
+        printf("GameServer Start!\n");
+
 #ifdef _S_LINUX_EPOLL_
 #else //_S_LINUX_EPOLL_
 	InitializeCriticalSection(&cs);	
@@ -46,6 +49,8 @@ int _tmain(int argc, char* argv[])
 
 	DeleteCriticalSection(&cs);
 #endif //_S_LINUX_EPOLL_
+
+        printf("GameServer Shutdown Complete!\n");
 
 	return 0;
 }

@@ -1,4 +1,3 @@
-#include "StdAfx.h"
 #include "cAIStatusAttack.h"
 #include "cMoveSelect.h"
 
@@ -14,7 +13,8 @@ cAIStatusAttack::~cAIStatusAttack(void)
 
 void cAIStatusAttack::AISet(stClientInfo*  PlayerCharacter,stEnemyInfo*  Monster)
 {
-	
+#ifdef _S_MOD_D3DX9_API_CUSTOM_
+#else //_S_MOD_D3DX9_API_CUSTOM_	
 
 	D3DXVECTOR3 vPos  =	PlayerCharacter->transformInfo.vPos - Monster->vPos;
 	
@@ -30,4 +30,5 @@ void cAIStatusAttack::AISet(stClientInfo*  PlayerCharacter,stEnemyInfo*  Monster
 	
 
 	Composite->Process(Monster);
+#endif //_S_MOD_D3DX9_API_CUSTOM_
 }
