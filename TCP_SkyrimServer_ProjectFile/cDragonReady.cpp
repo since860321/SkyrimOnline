@@ -16,14 +16,10 @@ void cDragonReady::Process( stEnemyInfo* target )
 {
 
 #ifdef _S_MOD_D3DX9_API_CUSTOM_
-	vector vTarget	=	target->vStartPos;
-	vector vMoster	=	target->vPos;
-	vector vPos = vTarget - vMoster;
 #else //_S_MOD_D3DX9_API_CUSTOM_
 	D3DXVECTOR3 vTarget	=	target->vStartPos;
 	D3DXVECTOR3 vMoster	=	target->vPos;
 	D3DXVECTOR3 vPos = vTarget - vMoster;
-#endif //_S_MOD_D3DX9_API_CUSTOM_
 
 	float Length = vPos.x * vPos.x + vPos.y * vPos.y + vPos.z * vPos.z;
 
@@ -70,4 +66,5 @@ void cDragonReady::Process( stEnemyInfo* target )
 	{
 		Data[0]->Process(target);
 	}
+#endif //_S_MOD_D3DX9_API_CUSTOM_
 }

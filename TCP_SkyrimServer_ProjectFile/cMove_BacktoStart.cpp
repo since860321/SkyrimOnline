@@ -1,4 +1,4 @@
-#include "defines.h"
+'#include "defines.h"
 #include "cMove_BacktoStart.h"
 
 
@@ -14,14 +14,10 @@ cMove_BacktoStart::~cMove_BacktoStart(void)
 void cMove_BacktoStart::Process( stEnemyInfo* targetMonster )
 {
 #ifdef _S_MOD_D3DX9_API_CUSTOM_
-	vector vTarget	=	targetMonster->vStartPos;
-	vector vMoster	=	targetMonster->vPos;
-	vector vPos = vTarget - vMoster;
 #else //_S_MOD_D3DX9_API_CUSTOM_
 	D3DXVECTOR3 vTarget	=	targetMonster->vStartPos;
 	D3DXVECTOR3 vMoster	=	targetMonster->vPos;
 	D3DXVECTOR3 vPos = vTarget - vMoster;
-#endif //_S_MOD_D3DX9_API_CUSTOM_
 
 	if(vPos.x * vPos.x + vPos.y * vPos.y+ vPos.z * vPos.z < targetMonster->fMoveSpeed * targetMonster->fMoveSpeed)
 	{
@@ -51,7 +47,5 @@ void cMove_BacktoStart::Process( stEnemyInfo* targetMonster )
 	{
 	targetMonster->nAnimationIndex = (int)D_mtidle_hover;
 	}
-
-
-
+#endif //_S_MOD_D3DX9_API_CUSTOM_
 }

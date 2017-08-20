@@ -11,12 +11,6 @@ cMove_Chase::~cMove_Chase(void)
 void cMove_Chase::Process( stEnemyInfo* targetMonster )
 {
 #ifdef _S_MOD_D3DX9_API_CUSTOM_
-	vector vTarget	=	targetMonster->pTarget->transformInfo.vPos;
-	vector vMoster	=	targetMonster->vPos;
-	vector vPos = vTarget - vMoster;
-	vector::normalize(&vPos,&vPos);
-
-	// 코드 추가해야함	
 #else //_S_MOD_D3DX9_API_CUSTOM_
 	D3DXVECTOR3 vTarget	=	targetMonster->pTarget->transformInfo.vPos;
 	D3DXVECTOR3 vMoster	=	targetMonster->vPos;
