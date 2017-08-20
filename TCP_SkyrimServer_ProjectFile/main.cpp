@@ -19,7 +19,7 @@ int _tmain(int argc, _TCHAR* argv[])
 #ifdef _S_LINUX_EPOLL_
 #else //_S_LINUX_EPOLL_
 CRITICAL_SECTION cs;
-#endif _S_LINUX_EPOLL_
+#endif //_S_LINUX_EPOLL_
 
 void CreateAIThread( void );
 #ifdef _S_LINUX_EPOLL_
