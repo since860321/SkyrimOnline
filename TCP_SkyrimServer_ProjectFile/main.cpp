@@ -33,9 +33,64 @@ int _tmain(int argc, _TCHAR* argv[])
 int main(void)
 #endif
 {
-        printf("GameServer Start!\n");
+	printf("GameServer Start!\n");
 
 #ifdef _S_LINUX_EPOLL_
+	socklen_t	len_saddr;
+	int			fd, fd_listener;
+	int			i, ret_recv, ret_poll;
+	char		*port, buf[1024];
+	struct		epoll_event *ep_events;
+
+	if (argc > 2)
+	{
+		printf("%s [port number]\n", argv[0]);
+		exit(EXIT_FAILURE);
+	}
+
+	if (argc == 2)
+		port = strdup(argv[1]);
+	else
+		port = strdup("0"); /* random port */
+	
+	struct addrinfo ai, *ai_ret;
+	int		rc_gai;
+	memset(&ai, 0, sizeof(ai));
+	ai.ai_family = AF_INET;
+	ai.ai_socktype = SOCK_STREAM;
+	ai.ai_flags = AI_ADDRCONFIG | AI_PASSIVE;
+	
+	if ((rc_gai = getaddrinfo(NULL, port, &ai, &ai_ret)) != 0)
+	{
+		printf("Fail: getaddrinfo():%s", gai_strerror(rc_gai));
+		exit(EXIT_FAILURE);
+	}
+
+	if ((fd_listener = socket(ai_ret->ai_family, ai_ret->ai_socktype, ai_ret->ai_protocol)) == -1)
+	{
+		printf("Fail: socket()");
+		exit(EXIT_FAILURE);
+	}
+
+	fcntl_setnb(fd_listener); /* 넌블록킹 모드로 변경 */
+	if (bind(fd_listener, ai_ret->ai_addr, ai_ret->ai_addrlen) == -1)
+	{
+		printf("Fail: bind()");
+		exit(EXIT_FAILURE);
+	}
+
+	listen(fd_listener, LISTEN_BACKLOG);
+	if ((epollfd = epoll_create(1)) == -1) /* epoll 생성, 사이즈는 의미가 없음 */
+	{
+		exit(EXIT_FAILURE);
+	}
+
+	if ((ep_events = calloc(max_ep_events, sizeof(struct epoll_event)) == NULL)
+	{
+		exit(EXIT_FAILURE);
+	}
+
+	ADD_EV(epollfd, fd_listener);
 #else //_S_LINUX_EPOLL_
 	InitializeCriticalSection(&cs);	
 	sgNetwork.CreateListenSocket();
@@ -50,7 +105,7 @@ int main(void)
 	DeleteCriticalSection(&cs);
 #endif //_S_LINUX_EPOLL_
 
-        printf("GameServer Shutdown Complete!\n");
+	printf("GameServer Shutdown Complete!\n");
 
 	return 0;
 }
