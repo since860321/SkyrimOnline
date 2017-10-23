@@ -23,6 +23,40 @@ CRITICAL_SECTION cs;
 
 void CreateAIThread( void );
 #ifdef _S_LINUX_EPOLL_
+int epollfd;
+
+int add_ev(int efd, int fd)
+{
+	struct epoll_event ev;
+	ev.events = EPOLLIN | EPOLLPRI;
+	ev.data.fd = fd;
+
+	if (epoll_ctl(efd, EPOLL_CTL_ADD, fd, &ev) == -1) {
+		/* Error with strerror(errno) */
+		return -1;
+	}
+
+	return 0;
+}
+
+int del_ev(int efd, int fd)
+{
+	if (epoll_ctl(efd, EPOLL_CTL_DEL, fd, NULL) == -1) {
+		printf("fd(%d) EPOLL_CTL_DEL Error(%d:%s)", fd, errno, strerror(errno));
+		return -1;
+	}
+	close(fd);
+	return 0;
+}
+
+int fcntl_setnb(int fd)
+{
+	/* only influence about O_ASYNC, O_APPEND, O_NONBLOCK on Linux-specific */
+	if (fcntl(fd, F_SETFL, O_NONBLOCK | fcntl(fd, F_GETFL)) == -1) {    
+		return errno;
+	}
+	return 0;
+}
 #else //_S_LINUX_EPOLL_
 DWORD WINAPI ProcessAI( LPVOID arg ); //< AI 쓰레드
 #endif //_S_LINUX_EPOLL_
@@ -30,7 +64,7 @@ DWORD WINAPI ProcessAI( LPVOID arg ); //< AI 쓰레드
 int _tmain(int argc, _TCHAR* argv[])
 #else 
 //int _tmain(int argc, char* argv[])
-int main(void)
+int main(int argc, char* argv[])
 #endif
 {
 	printf("GameServer Start!\n");
@@ -85,7 +119,7 @@ int main(void)
 		exit(EXIT_FAILURE);
 	}
 
-	if ((ep_events = calloc(max_ep_events, sizeof(struct epoll_event)) == NULL)
+	if ((ep_events = (epoll_event*)calloc(max_ep_events, sizeof(struct epoll_event))) == NULL)
 	{
 		exit(EXIT_FAILURE);
 	}
