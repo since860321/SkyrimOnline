@@ -47,6 +47,7 @@
 #define ADD_EV(a, b) if (add_ev(a, b) == -1){ printf("Fail: add_ev"); exit(1); }
 #define DEL_EV(a, b) if (del_ev(a, b) == -1){ printf("Fail: del_ev"); exit(1); }
 const int max_ep_events = 256;
+const int max_open_files = 256;
 //int epollfd; //epoll 파일기술자
 int add_ev(int efd, int fd); //파일기술자 fd를 epoll에 추가
 int del_ev(int efd, int fd); //파일기술자 fd를 epoll에서 제거
