@@ -2,6 +2,98 @@
 #include "cWinSocketServer.h"
 #include "cAI.h"
 #ifdef _S_LINUX_EPOLL_
+void SendInitiateInfo(int fd, DWORD* clientID )
+{
+	char szBuf[1024] = {0};
+
+	//< 패킷 만들어서 클라이언트로 보냄
+	stConnectPacket packet;
+	packet.header = sizeof(packet.ID);
+	for( size_t index = 0 ; index < MAXCLIENT ; ++ index )
+	{
+		if( m_bUsed[index] == false )
+		{
+			packet.ID = index;
+			m_bUsed[index] = true;
+			break;
+		}
+	}
+	memcpy( szBuf, &packet, sizeof(packet) );
+
+	std::cout << "접속자 ID: " << packet.ID << std::endl;
+	//< 클라이언트 등록
+	m_Client[packet.ID].bAlive = true;
+	m_Client[packet.ID].nID = packet.ID;
+	m_Client[packet.ID].fd = fd;
+	memset( &m_Client[packet.ID].transformInfo, 0, sizeof(stTransformInfo) );
+	//	sgAI.SetPlayerInfo(&m_Client); //< AI 맵 컨테이너 포인터 갱신
+
+	//< 클라이언트로 데이터 보내기(send())
+	int retval = send(fd, szBuf, sizeof(packet), 0);
+	if( retval == SOCKET_ERROR )
+	{
+		err_display( "send()" ); 
+		return;
+	}
+
+	//< 모든 클라이언트에게 새로운 클라이언트 데이터 생성하라고 패킷 보내기
+	std::map<int, stClientInfo>::iterator iter = m_Client.begin();
+
+	for( iter = m_Client.begin() ; iter != m_Client.end(); iter ++ )
+	{
+		if( iter->first == packet.ID ) continue; //<자기자신은 패스
+
+		if( m_bUsed[iter->first] == false ) continue; //< 접속 안한 클라이언트는 패스
+
+		stGeneratePacket newClient;
+		newClient.header = sizeof(newClient.Length);
+		newClient.Length.Length = 0;
+		newClient.Length.Option = PO_GENERATE;
+		newClient.Length.Sender = SND_MANAGER;
+		newClient.Length.clientId = packet.ID;
+
+		memcpy( szBuf, &newClient, sizeof(newClient) );
+
+		retval = send( iter->second.fd, szBuf, sizeof(newClient), 0 );
+		if( retval == SOCKET_ERROR )
+		{
+			err_display( "send()" ); 
+			return;
+		}
+	}
+}
+
+void SendEnemyInitiateInfo(int fd)
+{
+	char szBuf[1024] = {0};
+
+	for( size_t i = 0 ; i < MAXENEMY ; ++ i )
+	{
+		//< 패킷 만들어서 클라이언트로 보냄
+		stEnemyTransportInfoPacket packet;
+		packet.header = sizeof(packet.Length);
+		packet.Length.Length = sizeof(packet.EnemyInfo);
+		packet.Length.Option = PO_TRANSFORM;
+		packet.Length.Sender = SND_ENEMY;
+		packet.Length.clientId = i;	//< 적의 인덱스
+		packet.EnemyInfo.bAlive			=	m_pEnemy[i].bAlive;
+		packet.EnemyInfo.nAnimationIndex = m_pEnemy[i].nAnimationIndex;
+		packet.EnemyInfo.nEnemyIndex = m_pEnemy[i].nEnemyIndex;
+		packet.EnemyInfo.nHpReduce = m_pEnemy[i].dwHpReduce;
+		packet.EnemyInfo.vPos = m_pEnemy[i].vPos;
+		packet.EnemyInfo.vTarget = m_pEnemy[i].vTargetPos;
+
+		memcpy( szBuf, &packet, sizeof(packet) );
+
+		//< 클라이언트로 데이터 보내기(send())
+		int retval = send(fd, szBuf, sizeof(packet), 0);
+		if( retval == SOCKET_ERROR )
+		{
+			err_display( "send()" ); 
+			return;
+		}
+	}
+}
 #else //_S_LINUX_EPOLL_
 //< 스레드 함수 : 클라이언트와 데이터 통신
 DWORD WINAPI ProcessReceive( LPVOID arg );

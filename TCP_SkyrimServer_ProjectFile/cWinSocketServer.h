@@ -5,6 +5,10 @@
 
 //< 싱글턴으로 구현한 서버클래스 (형석)
 #ifdef _S_LINUX_EPOLL_
+std::map<int, stClientInfo> m_Client;
+
+void SendInitiateInfo(SOCKET sock, DWORD* clientID );
+void SendEnemyInitiateInfo(int fd);
 #else //_S_LINUX_EPOLL_
 class cWinSocketServer
 {
