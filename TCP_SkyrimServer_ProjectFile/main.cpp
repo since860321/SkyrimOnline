@@ -94,6 +94,8 @@ int main(int argc, char* argv[])
 	ai.ai_socktype = SOCK_STREAM;
 	ai.ai_flags = AI_ADDRCONFIG | AI_PASSIVE;
 	
+	printf("%s\n", port);
+
 	if ((rc_gai = getaddrinfo(NULL, port, &ai, &ai_ret)) != 0)
 	{
 		printf("Fail: getaddrinfo():%s", gai_strerror(rc_gai));
@@ -128,33 +130,34 @@ int main(int argc, char* argv[])
 
 	while (1)
 	{
-		printf("Epoll waiting...");
+		printf("Epoll waiting...\n");
 		if ((ret_poll = epoll_wait(epollfd, ep_events, max_open_files, -1)) == -1)
 		{
 			/* error */
 		}
-		printf("Epoll return (%d)", ret_poll);
+		
+		printf("Epoll return (%d)\n", ret_poll);
 		for (i = 0; i <ret_poll; ++i)
 		{
 			if (ep_events[i].events & EPOLLIN)
 			{
 				if (ep_events[i].data.fd == fd_listener) // 리스너 소켓인지 확인
 				{
-					struct socketaddr_storage saddr_c;
+					struct sockaddr_storage saddr_c;
 					while(1)
 					{
 						len_saddr = sizeof(saddr_c);
-						fd = accept(fd_listener, (struct socketaddr *)&saddr_c, &len_saddr);
+						fd = accept(fd_listener, (struct sockaddr *)&saddr_c, &len_saddr);
 						if (fd == -1)
 						{
 							if (errno == EAGAIN) // 더 이상 새로운 연결이 없는 경우
 								break;
-							printf("Error get connection from listen socket");
+							printf("Error get connection from listen socket\n");
 							break;
 						}
 						fcntl_setnb(fd); // 넌블록킹 모드
 						ADD_EV(epollfd, fd); // 새로운 연결을 epoll에 등록
-						printf("accept : add socket (%d)", fd);
+						printf("accept : add socket (%d)\n", fd);
 					}
 					continue; // 접속을 모두 받았다면 다시 epoll_wait로
 				} // if 블록 : 리스너 소켓 확인 블록
@@ -166,23 +169,23 @@ int main(int argc, char* argv[])
 				{
 					if (ret_recv == 0)
 					{
-						printf("fd(%d) : Session closed", ep_events[i].data.fd);
+						printf("fd(%d) : Session closed\n", ep_events[i].data.fd);
 						DEL_EV(epollfd, ep_events[i].data.fd);
 					}
 					else
 					{
-						printf("recv(fd=%d,n=%d) = %.*s", ep_events[i].data.fd, ret_recv, ret_recv, buf);
+						printf("recv(fd=%d,n=%d) = %.*s\n", ep_events[i].data.fd, ret_recv, ret_recv, buf);
 					}
 				}
 			}
 			else if (ep_events[i].events & EPOLLPRI) // OOB 데이터를 수신한 경우
 			{
-				printf("EPOLLPRI : Urgent data detected");
+				printf("EPOLLPRI : Urgent data detected\n");
 				if ((ret_recv = recv(ep_events[i].data.fd, buf, 1, MSG_OOB)) == -1)
 				{
 					// 에러 발생
 				}
-				printf("recv(fd=%d,n=1) = %.*s (OOB)", ep_events[i].data.fd, 1, buf);
+				printf("recv(fd=%d,n=1) = %.*s (OOB)\n", ep_events[i].data.fd, 1, buf);
 			}
 			else if (ep_events[i].events & EPOLLERR)
 			{
@@ -190,7 +193,7 @@ int main(int argc, char* argv[])
 			}
 			else
 			{
-				printf("fd(%d) epoll event(%d) err(%s)", ep_events[i].data.fd, ep_events[i].events, strerror(errno));
+				printf("fd(%d) epoll event(%d) err(%s)\n", ep_events[i].data.fd, ep_events[i].events, strerror(errno));
 			}
 		}
 	} // while loop
