@@ -1,14 +1,24 @@
-#ifdef _S_MOD_REMOVE_PRAGMA_ONCE_WARNING_
-#else //_S_MOD_REMOVE_PRAGMA_ONCE_WARNING_
+//#ifdef _S_MOD_REMOVE_PRAGMA_ONCE_WARNING_
+//#else //_S_MOD_REMOVE_PRAGMA_ONCE_WARNING_
 #pragma once 
-#endif //_S_MOD_REMOVE_PRAGMA_ONCE_WARNING_
-
+//#endif //_S_MOD_REMOVE_PRAGMA_ONCE_WARNING_
 //< ½Ì±ÛÅÏÀ¸·Î ±¸ÇöÇÑ ¼­¹öÅ¬·¡½º (Çü¼®)
-#ifdef _S_LINUX_EPOLL_
-std::map<int, stClientInfo> m_Client;
 
-void SendInitiateInfo(SOCKET sock, DWORD* clientID );
-void SendEnemyInitiateInfo(int fd);
+#include "defines.h"
+
+#ifdef _S_LINUX_EPOLL_
+class cEpollSocketServer
+{
+public:
+	static cEpollSocketServer& GetInstance();
+
+	std::map<int, stClientInfo> m_Client;
+	stEnemyInfo* m_pEnemy;
+	bool m_bUsed[MAXCLIENT];
+
+	void SendInitiateInfo(int fd);
+	void SendEnemyInitiateInfo(int fd);
+};
 #else //_S_LINUX_EPOLL_
 class cWinSocketServer
 {
@@ -25,16 +35,16 @@ public:
 	std::map<int, stClientInfo> m_Client;
 	stEnemyInfo*					  m_pEnemy;
 
-	//< ¹è¿­ÀÇ ÀÎµ¦½º´Â Å¬¶óÀÌ¾ðÆ®¿¡°Ô ºÎ¿©µÇ´Â ID. ÇöÀç »ç¿ëµÇ´Â ID¿¡ ÇØ´çÇÏ´Â bool °ªÀº true.
+	//< ¿¿¿ ¿¿¿¿ ¿¿¿¿¿¿¿ ¿¿¿¿ ID. ¿¿ ¿¿¿¿ ID¿ ¿¿¿¿ bool ¿¿ true.
 	bool				m_bUsed[MAXCLIENT];	
 
-	void Init( void );			//< À©¼Ó ÃÊ±âÈ­
-	void Cleanup( void );	//< À©¼Ó Á¾·á
+	void Init( void );			//< ¿¿ ¿¿¿
+	void Cleanup( void );	//< ¿¿ ¿¿
 
-	void CreateListenSocket( void );		//< Listen Socket »ý¼º
-	void Bind( void );							//< ¼ÒÄÏ ÁÖ¼Ò ±¸Á¶Ã¼¿Í ¹ÙÀÎµù
+	void CreateListenSocket( void );		//< Listen Socket ¿¿
+	void Bind( void );							//< ¿¿ ¿¿ ¿¿¿¿ ¿¿¿
 	void Listen( void );
-	void AcceptClient( void );				//< Å¬¶óÀÌ¾ðÆ® Á¢¼ÓÀ» ¹Þ¾Æ¼­ ¾²·¹µå »ý¼º
+	void AcceptClient( void );				//< ¿¿¿¿¿ ¿¿¿ ¿¿¿ ¿¿¿ ¿¿
 	void CloseSocket( void );
 
 	void SendInitiateInfo(SOCKET sock, DWORD* clientID );
@@ -43,19 +53,19 @@ public:
 	int recvn( SOCKET s, char* buf, int len, int flags );
 	void DeleteClientProcess(SOCKET deleteClientSock );
 
-	//< ¿¡·¯ Ãâ·Â ÇÔ¼ö
-	void err_quit( char* msg );		//< ¿¡·¯ ¸Þ½ÃÁö Ãâ·Â ÈÄ ÇÁ·Î±×·¥ Á¾·á
-	void err_display( char* msg );	//< ¿¡·¯ ¸Þ½ÃÁö¸¸ ÄÜ¼ÖÃ¢¿¡ Ãâ·Â
+	//< ¿¿ ¿¿ ¿¿
+	void err_quit( char* msg );		//< ¿¿ ¿¿¿ ¿¿ ¿ ¿¿¿¿ ¿¿
+	void err_display( char* msg );	//< ¿¿ ¿¿¿¿ ¿¿¿¿ ¿¿
 
-	int PacketToken( SOCKET s, std::queue<char>& QueueBuf, int len, int flags, PART& part, int& nNeedSize ); //< ÆÐÅ¶ ÀÚ¸£±â
-	void ProcessData( SOCKET s, SENDER Sender, PACKET_OPTION PacketOption, char* Buf, int nClientID );	//< Å¬¶óÀÌ¾ðÆ®·ÎºÎÅÍ ¹ÞÀº µ¥ÀÌÅÍ Ã³¸®
-	void ProcessPlayerTransform( SOCKET s, char* Buf, int nClientID );	//< ÇÃ·¹ÀÌ¾î º¯È¯¿¡ °üÇÑ Ã³¸®
-	void ProcessEnemyTransform( SOCKET s, char* Buf, int nClientID );	//< ÀûÀÇ º¯È¯¿¡ °üÇÑ Ã³¸®
-	void ProcessEnemyHpReduce( SOCKET s, char* Buf, int nClientID );		//< ÀûÀÇ HP °¨¼Ò¿¡ °üÇÑ Ã³¸®
+	int PacketToken( SOCKET s, std::queue<char>& QueueBuf, int len, int flags, PART& part, int& nNeedSize ); //< ¿¿ ¿¿¿
+	void ProcessData( SOCKET s, SENDER Sender, PACKET_OPTION PacketOption, char* Buf, int nClientID );	//< ¿¿¿¿¿¿¿¿ ¿¿ ¿¿¿ ¿¿
+	void ProcessPlayerTransform( SOCKET s, char* Buf, int nClientID );	//< ¿¿¿¿ ¿¿¿ ¿¿ ¿¿
+	void ProcessEnemyTransform( SOCKET s, char* Buf, int nClientID );	//< ¿¿ ¿¿¿ ¿¿ ¿¿
+	void ProcessEnemyHpReduce( SOCKET s, char* Buf, int nClientID );		//< ¿¿ HP ¿¿¿ ¿¿ ¿¿
 
 	//< properties
 	inline SOCKET* GetListenSocketPtr( void ) { return &m_ListenSock; }
-	void SendToServer( stEnemyTransportInfo Info ); //< ¸Å´ÏÀú¿¡°Ô ±¸Á¶Ã¼ Àü´Þ
-	void SendToServer(int nClientIndex, int nClientHp ); //< ¸Å´ÏÀú¿¡°Ô Å¬¶óÀÌ¾ðÆ® HP Á¤º¸ Àü´Þ
+	void SendToServer( stEnemyTransportInfo Info ); //< ¿¿¿¿¿ ¿¿¿ ¿¿
+	void SendToServer(int nClientIndex, int nClientHp ); //< ¿¿¿¿¿ ¿¿¿¿¿ HP ¿¿ ¿¿
 };
 #endif //_S_LINUX_EPOLL_

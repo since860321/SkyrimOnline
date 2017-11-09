@@ -159,8 +159,8 @@ int main(int argc, char* argv[])
 						ADD_EV(epollfd, fd); // 새로운 연결을 epoll에 등록
 						printf("accept : add socket (%d)\n", fd);
 
-						SendInitiateInfo( fd, &ThreadId ); //< 초기정보 전달
-						SendEnemyInitiateInfo( fd ); //< 몬스터 초기정보 전달
+						cEpollSocketServer::GetInstance().SendInitiateInfo(fd); //< 초기정보 전달
+						cEpollSocketServer::GetInstance().SendEnemyInitiateInfo(fd); //< 몬스터 초기정보 전달
 					}
 					continue; // 접속을 모두 받았다면 다시 epoll_wait로
 				} // if 블록 : 리스너 소켓 확인 블록

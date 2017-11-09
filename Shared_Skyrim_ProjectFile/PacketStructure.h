@@ -8,7 +8,7 @@
 struct stConnectPacket
 {
 	unsigned char	header; //< ( = sizeof(stConnectPacket.ID)
-	unsigned int	ID;
+	int	ID;
 };
 #pragma pack()
 
@@ -61,6 +61,7 @@ namespace BaseD3D
 struct stClientInfo 
 {
 #ifdef _S_LINUX_EPOLL_
+	int fd;
 #else //_S_LINUX_EPOLL_
 	SOCKET sock;
 #endif //_S_LINUX_EPOLL_

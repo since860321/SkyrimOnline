@@ -63,4 +63,3 @@ extern CRITICAL_SECTION cs;
 #endif //_S_MOD_MONSTER_AI_FROM_SERVER_TO_CLIENT_
 
 #include "../Shared_Skyrim_ProjectFile/PacketStructure.h"
-

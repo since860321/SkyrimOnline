@@ -1,8 +1,14 @@
-#include "defines.h"
 #include "cWinSocketServer.h"
 #include "cAI.h"
 #ifdef _S_LINUX_EPOLL_
-void SendInitiateInfo(int fd, DWORD* clientID )
+
+cEpollSocketServer& cEpollSocketServer::GetInstance()
+{
+	static cEpollSocketServer instance;
+	return instance;
+}
+
+void cEpollSocketServer::SendInitiateInfo(int fd)
 {
 	char szBuf[1024] = {0};
 
@@ -30,9 +36,9 @@ void SendInitiateInfo(int fd, DWORD* clientID )
 
 	//< 클라이언트로 데이터 보내기(send())
 	int retval = send(fd, szBuf, sizeof(packet), 0);
-	if( retval == SOCKET_ERROR )
+	if(retval == -1)
 	{
-		err_display( "send()" ); 
+		printf("send()\n"); 
 		return;
 	}
 
@@ -55,15 +61,15 @@ void SendInitiateInfo(int fd, DWORD* clientID )
 		memcpy( szBuf, &newClient, sizeof(newClient) );
 
 		retval = send( iter->second.fd, szBuf, sizeof(newClient), 0 );
-		if( retval == SOCKET_ERROR )
+		if(retval == -1)
 		{
-			err_display( "send()" ); 
+			printf("send()\n"); 
 			return;
 		}
 	}
 }
 
-void SendEnemyInitiateInfo(int fd)
+void cEpollSocketServer::SendEnemyInitiateInfo(int fd)
 {
 	char szBuf[1024] = {0};
 
@@ -87,9 +93,9 @@ void SendEnemyInitiateInfo(int fd)
 
 		//< 클라이언트로 데이터 보내기(send())
 		int retval = send(fd, szBuf, sizeof(packet), 0);
-		if( retval == SOCKET_ERROR )
+		if(retval == -1)
 		{
-			err_display( "send()" ); 
+			printf("send()\n"); 
 			return;
 		}
 	}
