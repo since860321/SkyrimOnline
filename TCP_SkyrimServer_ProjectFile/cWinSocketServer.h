@@ -9,12 +9,17 @@
 #ifdef _S_LINUX_EPOLL_
 class cEpollSocketServer
 {
+	cEpollSocketServer(void);
+	~cEpollSocketServer(void);
+
+	unsigned int m_dwSendTime;
+
+        std::map<int, stClientInfo> m_Client;
+        stEnemyInfo* m_pEnemy;
+        bool m_bUsed[MAXCLIENT];
+
 public:
 	static cEpollSocketServer& GetInstance();
-
-	std::map<int, stClientInfo> m_Client;
-	stEnemyInfo* m_pEnemy;
-	bool m_bUsed[MAXCLIENT];
 
 	void SendInitiateInfo(int fd);
 	void SendEnemyInitiateInfo(int fd);

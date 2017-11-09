@@ -2,6 +2,59 @@
 #include "cAI.h"
 #ifdef _S_LINUX_EPOLL_
 
+cEpollSocketServer::cEpollSocketServer()
+{
+	memset( m_bUsed, 0, sizeof(bool)*MAXCLIENT );
+	m_dwSendTime = 0;
+
+	m_pEnemy = new stEnemyInfo[MAXENEMY];
+	for( size_t i = 0 ; i < MAXENEMY ; ++ i )
+	{
+		m_pEnemy[i].bAlive = true;
+		m_pEnemy[i].dwAttackDamage = 4;
+		m_pEnemy[i].dwHp =	m_pEnemy[i].dwHpMax= 50;
+		m_pEnemy[i].dwHpReduce =0;
+#ifdef _S_MOD_D3DX9_API_CUSTOM_
+		m_pEnemy[i].vPos = vector(0,0,0);
+		m_pEnemy[i].vStartPos = vector(0,0,0);
+#else //_S_MOD_D3DX9_API_CUSTOM_
+		m_pEnemy[i].vPos = D3DXVECTOR3(0,0,0);
+		m_pEnemy[i].vStartPos = D3DXVECTOR3(0,0,0);
+#endif //_S_MOD_D3DX9_API_CUSTOM_
+		m_pEnemy[i].pTarget = NULL;
+		m_pEnemy[i].nAnimationIndex = 0;
+		m_pEnemy[i].nEnemyIndex = i;
+		m_pEnemy[i].fPerceptionLength = 1000;
+		m_pEnemy[i].MonsterType = CT_MONSTER_DRAGON;
+#ifdef _S_MOD_D3DX9_API_CUSTOM_
+		m_pEnemy[i].vTargetPos = vector( 0, 0, 0 );
+#else //_S_MOD_D3DX9_API_CUSTOM_
+		m_pEnemy[i].vTargetPos = D3DXVECTOR3( 0, 0, 0 );
+#endif //_S_MOD_D3DX9_API_CUSTOM_
+		m_pEnemy[i].fAttackLange = 400.0f;
+		m_pEnemy[i].dwAttackCoolTime	=	3000;	
+		m_pEnemy[i].dwAttackTime		=	0;	
+		m_pEnemy[i].dwRecoveryCoolTime	=	4000;		 
+		m_pEnemy[i].dwRecoveryTime		=	0;			 
+		m_pEnemy[i].dwGenerationCoolTime	=	10000;		
+		m_pEnemy[i].dwGenerationTime		=	0;			
+		m_pEnemy[i].fMoveSpeed		=	100.0f;			
+	}
+
+	for( size_t i = 0 ; i < MAXCLIENT ; ++ i )
+	{
+		m_Client[i]; //< 10¿¿ ¿¿¿ ¿¿ ¿¿
+		memset( &m_Client[i], 0, sizeof(m_Client[i]) );
+		m_Client[i].bAlive = false;
+	}
+
+	sgAI.SetPlayerInfo(&m_Client);
+}
+
+cEpollSocketServer::~cEpollSocketServer()
+{
+}
+
 cEpollSocketServer& cEpollSocketServer::GetInstance()
 {
 	static cEpollSocketServer instance;
@@ -26,7 +79,7 @@ void cEpollSocketServer::SendInitiateInfo(int fd)
 	}
 	memcpy( szBuf, &packet, sizeof(packet) );
 
-	std::cout << "Á¢¼ÓÀÚ ID: " << packet.ID << std::endl;
+	std::cout << "Client ID: " << packet.ID << std::endl;
 	//< Å¬¶óÀÌ¾ðÆ® µî·Ï
 	m_Client[packet.ID].bAlive = true;
 	m_Client[packet.ID].nID = packet.ID;
